@@ -1,0 +1,68 @@
+.director {
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(42);
+    padding-top: px-to-rem(132);
+    padding-bottom: px-to-rem(132);
+
+    @include mobile {
+      flex-direction: column;
+      padding-top: px-to-rem(100);
+      padding-bottom: px-to-rem(100);
+    }
+  }
+
+  &__image-block {
+    position: relative;
+    width: px-to-rem(450);
+    height: px-to-rem(450);
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  &__quote {
+    position: relative;
+    padding: px-to-rem(80) px-to-rem(32);
+    flex-grow: 1;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: px-to-rem(108);
+      height: px-to-rem(116);
+      background-image: url("../img/quote.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+      bottom: 0;
+      transform: rotate(180deg);
+    }
+
+    &-inner {
+      background: $main-color;
+      padding: px-to-rem(54) px-to-rem(40);
+      font-size: px-to-rem(36);
+      letter-spacing: -0.005em;
+    }
+  }
+}

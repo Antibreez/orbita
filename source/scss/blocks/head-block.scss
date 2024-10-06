@@ -1,0 +1,71 @@
+.head-block {
+  padding-top: px-to-rem(85);
+  padding-bottom: px-to-rem(88);
+  background: $main-color;
+  overflow: hidden;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(20);
+    margin-bottom: px-to-rem(20);
+
+    @include mobile {
+      flex-direction: column;
+      gap: px-to-rem(30);
+    }
+  }
+
+  &__logo {
+    width: px-to-rem(610);
+    transform: translate(65%, 15%) scale(1.4);
+    transition: transform 0.8s cubic-bezier(.63,0,.29,1) 0.8s, opacity 0.8s ease 0.2s;
+    opacity: 0;
+
+    @include mobile {
+      width: px-to-rem(450);
+      transform: translate(0, 35%) scale(1.4);
+    }
+  }
+
+  &__lead {
+    font-size: px-to-rem(24);
+    text-transform: uppercase;
+    transform: translateX(30%);
+    opacity: 0;
+    transition: transform 0.8s ease 1.2s, opacity 0.8s linear 1.2s;
+
+    @include mobile {
+      text-align: center;
+      font-size: px-to-rem(28);
+      transform: translateY(30%);
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__description {
+    font-size: px-to-rem(28);
+    max-width: px-to-rem(1200);
+    transform: translateX(-20%);
+    opacity: 0;
+    transition: transform 0.8s ease 1.2s, opacity 0.8s linear 1.2s;
+
+    @include mobile {
+      text-align: center;
+      transform: translateY(30%);
+      transition: transform 0.8s ease 1.4s, opacity 0.8s linear 1.4s;
+    }
+  }
+
+  &.ready & {
+    &__lead,
+    &__description,
+    &__logo {
+      transform: none;
+      opacity: 1;
+    }
+  }
+}

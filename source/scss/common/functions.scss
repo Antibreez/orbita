@@ -1,0 +1,7 @@
+@function px-to-rem($px) {
+  @return math.div($px, $base-px-desktop) * 1rem;
+}
+
+@function percent($px, $base) {
+  @return math.div($px, $base) * 100%;
+}

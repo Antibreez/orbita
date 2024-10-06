@@ -1,0 +1,31 @@
+html {
+  font-size: calc(100vw / 1440 * 16);
+
+  @media (min-width: 1520px) {
+    font-size: 16px;
+  }
+
+  @include mobile {
+    font-size: calc(100vw / 767 * 16);
+  }
+
+  // @media (max-width: 767px) and (orientation: portrait) {
+  //   font-size: calc(100vw / 768 * 16);
+  // }
+}
+
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+body * {
+  line-height: 140%;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: calc($base-width-desktop * 1px);
+  padding: 0 px-to-rem(40);
+  margin: 0 auto;
+}

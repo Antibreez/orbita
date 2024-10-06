@@ -1,0 +1,114 @@
+.contacts {
+  padding-top: px-to-rem(70);
+  padding-bottom: px-to-rem(100);
+
+  @include mobile {
+    padding-top: px-to-rem(100);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-size: px-to-rem(40);
+    margin-bottom: px-to-rem(60);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    gap: px-to-rem(17);
+    font-size: px-to-rem(32);
+    text-decoration: none;
+    margin-bottom: px-to-rem(44);
+
+    @include mobile {
+      font-size: px-to-rem(30);
+    }
+
+    &-text {
+      color: #000;
+    }
+
+    svg {
+      width: px-to-rem(62);
+      height: px-to-rem(60);
+      color: #242632;
+      transition: transform 0.4s ease;
+    }
+
+    &--phone {
+      &:hover {
+        svg {
+          transform: rotate(20deg);
+        }
+      }
+    }
+
+    // &--phone {
+    //   .contacts__item-text {
+    //     position: relative;
+
+    //     &::before {
+    //       content: "";
+    //       position: absolute;
+    //       bottom: 0;
+    //       left: 50%;
+    //       width: 100%;
+    //       height: px-to-rem(3);
+    //       background: #000;
+    //       transform: translateX(-50%) scaleX(0);
+    //       transition: transform 0.3s ease;
+    //     }
+    //   }
+
+    //   &:hover {
+    //     .contacts__item-text {
+    //       &::before {
+    //         transform: translateX(-50%) scaleX(1);
+    //       }
+    //     }
+    //   }
+    // }
+
+    &--address {
+      margin-bottom: px-to-rem(110);
+
+      @include mobile {
+        margin-bottom: px-to-rem(80);
+      }
+    }
+  }
+
+  &__map {
+    width: 75%;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 50%;
+
+      @include mobile {
+        padding-top: 100%;
+      }
+    }
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

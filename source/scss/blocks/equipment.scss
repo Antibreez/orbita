@@ -1,0 +1,41 @@
+.equipment {
+  background: $main-color;
+
+  &__inner {
+    padding-top: px-to-rem(137);
+    padding-bottom: px-to-rem(104);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: px-to-rem(136);
+    background: linear-gradient(90.01deg, rgba(255, 255, 255, 0) 0.01%, #FFFFFF 70.2%);
+
+    @include mobile {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      background: none;
+      gap: px-to-rem(60);
+      padding-top: px-to-rem(100);
+      padding-bottom: px-to-rem(100);
+    }
+  }
+
+  &__text {
+    font-size: px-to-rem(36);
+    max-width: px-to-rem(780);
+    text-align: right;
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  &__image {
+    width: px-to-rem(430);
+    border-radius: px-to-rem(20);
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
