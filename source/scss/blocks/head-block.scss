@@ -24,7 +24,8 @@
 
     @include mobile {
       width: px-to-rem(450);
-      transform: translate(0, 35%) scale(1.4);
+      transform: none;
+      opacity: 1;
     }
   }
 
@@ -38,7 +39,8 @@
     @include mobile {
       text-align: center;
       font-size: px-to-rem(28);
-      transform: translateY(30%);
+      transform: none;
+      opacity: 1;
     }
 
     span {
@@ -55,8 +57,8 @@
 
     @include mobile {
       text-align: center;
-      transform: translateY(30%);
-      transition: transform 0.8s ease 1.4s, opacity 0.8s linear 1.4s;
+      transform: none;
+      opacity: 1;
     }
   }
 
